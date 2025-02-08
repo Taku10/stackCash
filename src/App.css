@@ -1,0 +1,21 @@
+
+
+
+
+:root{
+  --main_color:rgb(41, 128, 41);
+  --white-grey: rgb(231, 230, 230);
+}
+
+
+* {
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+.App{
+  width: 100%;
+  min-height: 900rem;
+  border: 3px solid green;
+}
