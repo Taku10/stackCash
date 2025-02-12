@@ -9,6 +9,7 @@ import Nav from './nav';
 
 
 const Home = () => {
+    
     return (
         <div className="home-container">
             <Nav />
@@ -85,7 +86,13 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-
+                <div className="right-wrapper">
+                    <div className="profile-section">
+                        <div className="profile-picture">
+                                                
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )
