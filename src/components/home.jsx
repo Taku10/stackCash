@@ -34,7 +34,7 @@ const Home = () => {
                                     Total Current Balance
                                 </p>
                                 <h3>
-                                    $545.54
+                                    $00.54
                                 </h3>
                             </div>
 
@@ -88,8 +88,18 @@ const Home = () => {
                 </div>
                 <div className="right-wrapper">
                     <div className="profile-section">
+                        <div className="profile-cover">
+
+                        </div>
                         <div className="profile-picture">
                                                 
+                        </div>
+                    </div>
+                    <div className="budget-section">
+                        <div className="budget-header">
+                            <div className="budget-section">
+                                
+                            </div>
                         </div>
                     </div>
                 </div>

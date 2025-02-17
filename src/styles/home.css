@@ -139,7 +139,7 @@
 }
 
 .transaction-wrapper{
-    /* border: 1px solid; */
+    border: 1px solid; 
     margin-top: 1em;
     height: 43.2vh;
     display: flex;
@@ -195,15 +195,38 @@
     justify-content: space-between;
     border: 1px solid orange;
     height: 100%;
+    margin-left: 1em;
 }
 
 .profile-section{
     width: 100%;
-    height: 20vh;
+    height: 19em;
+    border: 3px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
 }
+.profile-cover{
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(to right, red , yellow);
+   margin-bottom: 10em;
+}
+
 .profile-picture{
     background-color:grey;
     height: 50%;
     border-radius: 50%;
-    width:20% ;
+    width: 45%;
+    z-index: 1;
+    position: absolute;
+    margin-top: 1em;
+}
+
+.budget-section{
+    border: 1px solid purple;
+    height: 100%;
 }
