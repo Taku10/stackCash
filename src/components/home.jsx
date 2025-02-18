@@ -1,5 +1,8 @@
+import { ArcElement, Chart, defaults } from 'chart.js/auto';
+import { Doughnut } from "react-chartjs-2";
 import { FaChartPie } from "react-icons/fa";
 import { GoPlus } from "react-icons/go";
+import budgetData from "../data/budget.json";
 import chess from '../images/chess.png';
 import netflix from '../images/netflix.png';
 import roger from '../images/roger.jpg';
@@ -7,9 +10,12 @@ import walmart from '../images/walmart.png';
 import '../styles/home.css';
 import Nav from './nav';
 
+// Register the ArcElement
+Chart.register(ArcElement);
+defaults.maintainAspectRatio = false;
+defaults.responsive = true;
 
 const Home = () => {
-    
     return (
         <div className="home-container">
             <Nav />
@@ -45,7 +51,7 @@ const Home = () => {
                         </div>
                     </div>
                     <div className="transaction-section">
-                        <div className="transaction-header">
+                        <div className="transaction-header header">
                             <h4>Transactions</h4>
                             <button>View all</button>
                         </div>
@@ -91,15 +97,39 @@ const Home = () => {
                         <div className="profile-cover">
 
                         </div>
-                        <div className="profile-picture">
-                                                
+                        <div className="profile-picture move-left">
+                                              
+                        </div>
+                        <div className="profile-bio move-left">
+                            <h2>Takunda Madziwa</h2>
+                            <p>tmadziwa@css.edu</p>
                         </div>
                     </div>
                     <div className="budget-section">
-                        <div className="budget-header">
-                            <div className="budget-section">
-                                
-                            </div>
+                        <div className="budget-header header">
+                            <h4>Budgets</h4>
+                        </div>
+                        <div className="budget-wrapper">
+                            <Doughnut 
+                                data={{
+                                    labels: budgetData.map((data) => data.label),
+                                    datasets: [
+                                        {
+                                            label: "Budgets",
+                                            data:budgetData.map((data) => data.value),
+                                            backgroundColor: budgetData.map((data) => data.bColor),
+                                        },
+                                    ],
+                                }} 
+                                options={{
+                                    plugins: {
+                                        legend: {
+                                            display: false
+                                        }
+                                    }
+                                }}
+                                className='pie-chart' 
+                            />
                         </div>
                     </div>
                 </div>
