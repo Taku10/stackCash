@@ -16,6 +16,31 @@ defaults.maintainAspectRatio = false;
 defaults.responsive = true;
 
 const Home = () => {
+    function upload(event) {
+        const fileUploadInput = event.target;
+
+        // using index [0] to take the first file from the array
+        const image = fileUploadInput.files[0];
+
+        // check if the file selected is not an image file
+        if (!image.type.includes('image')) {
+            return alert('Only images are allowed!');
+        }
+
+        // check if size (in bytes) exceeds 10 MB
+        if (image.size > 10_000_000) {
+            return alert('Maximum upload size is 10MB!');
+        }
+
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(image);
+
+        fileReader.onload = (fileReaderEvent) => {
+            const profilePicture = document.querySelector('.profile-picture');
+            profilePicture.style.backgroundImage = `url(${fileReaderEvent.target.result})`;
+        };
+    }
+
     return (
         <div className="home-container">
             <Nav />
@@ -40,13 +65,13 @@ const Home = () => {
                                     Total Current Balance
                                 </p>
                                 <h3>
-                                    $00.54
+                                    $120.54
                                 </h3>
                             </div>
 
                         </div>
                         <div className="add-bank">
-                            <GoPlus className = "plus" />
+                            <GoPlus className="plus" />
                             <p>Add Bank</p>
                         </div>
                     </div>
@@ -88,7 +113,7 @@ const Home = () => {
                                 <p className="record-amount-received">+$150.30</p>
                                 <p className="record-date">01/25/2025</p>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -98,7 +123,12 @@ const Home = () => {
 
                         </div>
                         <div className="profile-picture move-left">
-                                              
+                            <input
+                                className="file-uploader"
+                                type="file"
+                                onChange={upload}
+                                accept="image/*"
+                            />
                         </div>
                         <div className="profile-bio move-left">
                             <h2>Takunda Madziwa</h2>
@@ -110,17 +140,17 @@ const Home = () => {
                             <h4>Budgets</h4>
                         </div>
                         <div className="budget-wrapper">
-                            <Doughnut 
+                            <Doughnut
                                 data={{
                                     labels: budgetData.map((data) => data.label),
                                     datasets: [
                                         {
                                             label: "Budgets",
-                                            data:budgetData.map((data) => data.value),
+                                            data: budgetData.map((data) => data.value),
                                             backgroundColor: budgetData.map((data) => data.bColor),
                                         },
                                     ],
-                                }} 
+                                }}
                                 options={{
                                     plugins: {
                                         legend: {
@@ -128,7 +158,7 @@ const Home = () => {
                                         }
                                     }
                                 }}
-                                className='pie-chart' 
+                                className='pie-chart'
                             />
                         </div>
                     </div>

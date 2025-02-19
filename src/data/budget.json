@@ -2,46 +2,38 @@
     {
         "label": "Groceries",
         "value": 200,
-        "bColor": "#dda0dd"
+        "bColor": "#a3e4d7"
     },
     {
         "label": "Rent",
         "value": 800,
-        "bColor": "#e6e6fa"
+        "bColor": "#76d7c4"
     },
     {
         "label": "Utilities",
         "value": 150,
-        "bColor": "#d8bfd8"
+        "bColor": "#58d68d"
     },
     {
         "label": "Entertainment",
         "value": 100,
-        "bColor": "#dda0dd"
+        "bColor": "#82e0aa"
     },
     {
         "label": "Transportation",
         "value": 50,
-        "bColor": "#da70d6"
+        "bColor": "#28b463"
     },
     {
         "label": "Savings",
         "value": 300,
-        "bColor": "#ba55d3"
+        "bColor": "#2ecc71"
     },
-    {
-        "label": "Insurance",
-        "value": 100,
-        "bColor": "#9932cc"
-    },
-    {
-        "label": "Dining Out",
-        "value": 75,
-        "bColor": "#9400d3"
-    },
+    
+
     {
         "label": "Miscellaneous",
-        "value": 25,
-        "bColor": "#8a2be2"
+        "value": 125,
+        "bColor": "#239b56"
     }
 ]
