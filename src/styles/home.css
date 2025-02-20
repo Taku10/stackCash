@@ -106,12 +106,13 @@
 }
 
 .transaction-section{
-    box-shadow: 1px 1px 6px 1px #b9b6b6;
+    /* box-shadow: 1px 1px 6px 1px #b9b6b6; */
     /* margin-top: 1em; */
     border-radius: 0.5em;
     padding-left:1em ;
     padding-right: 1em;
     padding-top: 1em;
+    
    
 }
 
