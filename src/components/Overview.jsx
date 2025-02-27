@@ -7,15 +7,14 @@ import chess from '../images/chess.png';
 import netflix from '../images/netflix.png';
 import roger from '../images/roger.jpg';
 import walmart from '../images/walmart.png';
-import '../styles/home.css';
-import Nav from './nav';
+import '../styles/overview.css';
 
 // Register the ArcElement
 Chart.register(ArcElement);
 defaults.maintainAspectRatio = false;
 defaults.responsive = true;
 
-const Home = () => {
+const Overview = () => {
     function upload(event) {
         const fileUploadInput = event.target;
 
@@ -43,7 +42,6 @@ const Home = () => {
 
     return (
         <div className="home-container">
-            <Nav />
             <div className='home-wrapper'>
                 <div className='left-middle-wrapper'>
                     <div className='welcome-section'>
@@ -168,4 +166,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Overview
