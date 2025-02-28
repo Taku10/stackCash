@@ -41,7 +41,7 @@
     box-shadow: 1px 1px 6px 1px #b9b6b6;
     padding-top: 1em;
     padding-bottom: 1em;
-    padding-left: 1em;
+    /* padding-left: 1em; */
     border-radius: 0.5em;
 }
 
@@ -59,13 +59,13 @@
 }
 
 .pie-chart{
-    font-size: 8em;
-    margin-right: 0.2em;
-    color: rgb(175, 233, 183);
-    width: 100%;
-    max-width: 400px; /* Adjust the max-width as needed */
-    margin: 0 auto; /* Center the chart */
+    border:1px solid;
+    /* margin-right: 0.2em; */
+    /* width: 100%; */
+     /* Adjust the max-width as needed */
+    /* Center the chart */ 
 }
+
 
 .bank-stuff p{
     font-weight: 600;

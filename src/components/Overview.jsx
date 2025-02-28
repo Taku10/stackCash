@@ -1,6 +1,6 @@
 import { ArcElement, Chart, defaults } from 'chart.js/auto';
 import { Doughnut } from "react-chartjs-2";
-import { FaChartPie } from "react-icons/fa";
+import CountUp from 'react-countup';
 import { GoPlus } from "react-icons/go";
 import budgetData from "../data/budget.json";
 import chess from '../images/chess.png';
@@ -53,7 +53,30 @@ const Overview = () => {
                         </p>
                     </div>
                     <div className='balance-section'>
-                        <FaChartPie className="pie-chart" />
+                    <Doughnut
+                                data={{
+                                    labels: ["Chase", "Wells Fargo", "US Bank"],
+                                    datasets: [
+                                        {
+                                            label: "Banks",
+                                            data: [344, 500, 200],
+                                            backgroundColor: ["#58d68d", "#82e0aa", "#28b463"],
+                                            offset	: 10,
+                                        },
+                                    ],
+                                }}
+                                options={{
+                                    responsive: true,
+                                    maintainAspectRatio: false,
+                                    cutout: '50%',
+                                    plugins: {
+                                        legend: {
+                                            display: false
+                                        }
+                                    }
+                                }}
+                                className='pie-chart'
+                            />
                         <div className="bank-stuff">
                             <p className="num-bank">
                                 3 Bank Accounts
@@ -63,7 +86,7 @@ const Overview = () => {
                                     Total Current Balance
                                 </p>
                                 <h3>
-                                    $120.54
+                                   $<CountUp  end={875.45} decimals={2} duration={2.4}/> 
                                 </h3>
                             </div>
 
@@ -156,7 +179,7 @@ const Overview = () => {
                                         }
                                     }
                                 }}
-                                className='pie-chart'
+                                className="pie-chart"
                             />
                         </div>
                     </div>
