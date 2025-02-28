@@ -41,7 +41,7 @@ const Overview = () => {
     }
 
     return (
-        <div className="home-container">
+    
             <div className='home-wrapper'>
                 <div className='left-middle-wrapper'>
                     <div className='welcome-section'>
@@ -162,7 +162,7 @@ const Overview = () => {
                     </div>
                 </div>
             </div>
-        </div>
+      
     )
 }
 

@@ -3,7 +3,7 @@
 .nav{
     /* border: 1px solid red; */
     box-shadow: 1px 1px 6px 1px#b9b6b6;
-    width: 60%;
+    /* width: 60%; */
     max-height: 100%;
     border-radius: 0.8em;
     margin-right:2% ;
@@ -42,7 +42,8 @@
 }
 
 .nav-item{
-    list-style-type: none;
+    text-decoration: none;
+    color: black;
     /* border: 1px solid; */
     font-size: 1.25em;
     font-weight:600 ;
