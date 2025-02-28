@@ -2,13 +2,42 @@
     padding-right: 3em;
     background-color: #f8f9fa;
     min-height: 100vh;
-    background-color: #007bff;
+    /* background-color: #007bff; */
 }
 
-.history-container h2 {
-    text-align: center;
+.history-container h1 {
     margin-bottom: 1em;
-    color: var(--main_color);
+   color: rgb(56, 56, 56);
+    font-size: 2.0em;
+    margin-bottom: 0.1em;
+}
+
+.history-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2em;
+  
+}
+
+.select-account{
+    border: 1px solid;
+    width: 9em;
+    border-radius: 0.3em;
+}
+
+.select-account select{
+    padding: 1em 1em 1em 0.5em;
+    border: none;
+    border-radius: 4px;
+    background-color: #ddd;
+    cursor: pointer;
+    background-color: white;
+   
+}
+
+.select-account select:focus{
+    outline: none;
 }
 
 /* .transaction-list {
@@ -17,21 +46,6 @@
     gap: 1em;
 } */
 
-.transaction-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.transaction-left {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-}
 
 .transaction-list {
     display: flex;
@@ -39,38 +53,7 @@
     gap: 1em;
 }
 
-.transaction-left img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
 
-.transaction-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.transaction-name {
-    font-weight: bold;
-    color: #333;
-}
-
-.transaction-date {
-    color: #777;
-}
-
-.transaction-amount {
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-.transaction-amount.received {
-    color: green;
-}
-
-.transaction-amount.spent {
-    color: red;
-}
 
 .pagination {
     display: flex;
