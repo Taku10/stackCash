@@ -41,8 +41,9 @@
     box-shadow: 1px 1px 6px 1px #b9b6b6;
     padding-top: 1em;
     padding-bottom: 1em;
-    /* padding-left: 1em; */
+    padding-left: 1em;
     border-radius: 0.5em;
+   
 }
 
 
@@ -58,14 +59,28 @@
     margin-bottom: 2em;
 }
 
-.pie-chart{
-    border:1px solid;
-    /* margin-right: 0.2em; */
-    /* width: 100%; */
-     /* Adjust the max-width as needed */
-    /* Center the chart */ 
+.pie-header{
+    border:1px solid
 }
 
+.pie-chart{
+    
+    margin-right: 0.2em;
+    color: rgb(175, 233, 183);
+    width: 100%;
+    max-width: 400px; /* Adjust the max-width as needed */
+    margin: 0 auto; /* Center the chart */
+}
+
+
+
+.pie-chart-banks{
+     
+    color: rgb(175, 233, 183);
+    width: 100%;
+    max-width: 400px; /* Adjust the max-width as needed */
+    
+}
 
 .bank-stuff p{
     font-weight: 600;
@@ -92,13 +107,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 48%;
+    margin-left: 20%;
     margin-bottom: 18%;
     width: 45em;
     cursor: pointer;
     color: var(--main_color);
     font-weight: 600;
-    /* border:1px solid; */
+   
 }
 
 .plus{

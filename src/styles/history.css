@@ -50,7 +50,8 @@
 .transaction-list {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 0.5em;
+    margin-top: 2em;
 }
 
 
@@ -71,11 +72,21 @@
 }
 
 .pagination button.active {
-    background-color: #007bff;
-    color: #fff;
+    background-color:var(--main_color);
+        color: #fff;
 }
 
 .pagination button:hover {
-    background-color: #007bff;
+    background-color:var(--main_color);
     color: #fff;
+}
+
+.transaction-amount-received{
+    font-weight: 900;
+    color: green;
+}
+
+.transaction-amount-spent{
+    font-weight: 900;
+    color: red;
 }
