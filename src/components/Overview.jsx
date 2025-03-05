@@ -48,7 +48,9 @@ const Overview = () => {
                 .pauseFor(20000000000000000000000000000000000000000n)
                 .start();
         }}
-        options={{ loop: true }}
+        options={{ loop: true,
+                cursor: '',
+        }}
     />
 
     const doughnut = <Doughnut

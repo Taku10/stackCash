@@ -1,6 +1,24 @@
+import toast, { Toaster } from 'react-hot-toast';
 import '../styles/transfer.css';
 
 const Transfer = () => {
+
+    const money_send = (event) => {
+        event.preventDefault();
+        
+        const myPromise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // Randomly resolve or reject the promise
+                Math.random() < 0.5 ? resolve('Money Sent') : reject('Failed to send money');
+            }, 3000);
+        });
+
+        toast.promise(myPromise, {
+            loading: 'Sending money...',
+            success: 'Money sent successfully!',
+            error: 'Failed to send money.',
+        });
+    };
     return (
         <div className="transfer-container">
             <div className="transfer-wrapper">
@@ -43,7 +61,8 @@ const Transfer = () => {
                         <textarea name="transfer-notes" id="transfer-notes" cols="30" rows="10"></textarea>
 
                     </div>
-                    <button>Send</button>
+                    <Toaster />
+                    <button onClick={money_send}>Send</button>
                 </form>
 
             </div>
