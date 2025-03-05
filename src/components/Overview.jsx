@@ -2,6 +2,7 @@ import { ArcElement, Chart, defaults } from 'chart.js/auto';
 import { Doughnut } from "react-chartjs-2";
 import CountUp from 'react-countup';
 import { GoPlus } from "react-icons/go";
+import TypeWriter from 'typewriter-effect';
 import budgetData from "../data/budget.json";
 import chess from '../images/chess.png';
 import netflix from '../images/netflix.png';
@@ -40,13 +41,44 @@ const Overview = () => {
         };
     }
 
+    const typewriter = <TypeWriter
+        onInit={(typeWriter) => {
+            typeWriter
+                .typeString('Takunda')
+                .pauseFor(20000000000000000000000000000000000000000n)
+                .start();
+        }}
+        options={{ loop: true }}
+    />
+
+    const doughnut = <Doughnut
+        data={{
+            labels: budgetData.map((data) => data.label),
+            datasets: [
+                {
+                    label: "Budgets",
+                    data: budgetData.map((data) => data.value),
+                    backgroundColor: budgetData.map((data) => data.bColor),
+                },
+            ],
+        }}
+        options={{
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }}
+        className="pie-chart"
+    />
     return (
 
         <div className='home-wrapper'>
             <div className='left-middle-wrapper'>
                 <div className='welcome-section'>
                     <h1>
-                        Welcome <span className='name'>Takunda</span>
+
+                        Welcome <span className='name'> {typewriter}</span>
                     </h1>
                     <p>
                         Inspired by Stack Overflow, but stacking money
@@ -54,30 +86,30 @@ const Overview = () => {
                 </div>
                 <div className='balance-section'>
                     {/* <div className='pie-header'> */}
-                        <Doughnut
-                            data={{
-                                labels: ["Chase", "Wells Fargo", "US Bank"],
-                                datasets: [
-                                    {
-                                        label: "Banks",
-                                        data: [344, 500, 200],
-                                        backgroundColor: ["#58d68d", "#82e0aa", "#28b463"],
-                                        offset: 10,
-                                    },
-                                ],
-                            }}
-                            options={{
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                cutout: '50%',
-                                plugins: {
-                                    legend: {
-                                        display: false
-                                    }
+                    <Doughnut
+                        data={{
+                            labels: ["Chase", "Wells Fargo", "US Bank"],
+                            datasets: [
+                                {
+                                    label: "Banks",
+                                    data: [344, 500, 200],
+                                    backgroundColor: ["#58d68d", "#82e0aa", "#28b463"],
+                                    offset: 10,
+                                },
+                            ],
+                        }}
+                        options={{
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            cutout: '50%',
+                            plugins: {
+                                legend: {
+                                    display: false
                                 }
-                            }}
-                            className='pie-chart-banks'
-                        />
+                            }
+                        }}
+                        className='pie-chart-banks'
+                    />
                     {/* </div> */}
 
                     <div className="bank-stuff">
@@ -89,7 +121,7 @@ const Overview = () => {
                                 Total Current Balance
                             </p>
                             <h3>
-                                $<CountUp end={875.45} decimals={2} duration={2.4} />
+                                $<CountUp end={875.45} decimals={2} duration={1} />
                             </h3>
                         </div>
 
@@ -164,26 +196,7 @@ const Overview = () => {
                         <h4>Budgets</h4>
                     </div>
                     <div className="budget-wrapper">
-                        <Doughnut
-                            data={{
-                                labels: budgetData.map((data) => data.label),
-                                datasets: [
-                                    {
-                                        label: "Budgets",
-                                        data: budgetData.map((data) => data.value),
-                                        backgroundColor: budgetData.map((data) => data.bColor),
-                                    },
-                                ],
-                            }}
-                            options={{
-                                plugins: {
-                                    legend: {
-                                        display: false
-                                    }
-                                }
-                            }}
-                            className="pie-chart"
-                        />
+                        {doughnut}
                     </div>
                 </div>
             </div>

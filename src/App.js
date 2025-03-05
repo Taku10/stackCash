@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import History from './components/History';
-import Nav from './components/Nav';
-import Overview from './components/Overview';
+import History from './components/history';
+import Nav from './components/nav';
+import Overview from './components/overview';
 
 function App() { 
   return (

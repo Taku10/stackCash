@@ -64,7 +64,7 @@
 
 }
 
-.nav-item:current{
+.nav-item.active{
     background-color: var(--main_color);
     color: var(--white-grey);
 
