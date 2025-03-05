@@ -3,6 +3,7 @@ import './App.css';
 import History from './components/history';
 import Nav from './components/nav';
 import Overview from './components/overview';
+import Transfer from './components/Transfer';
 
 function App() { 
   return (
@@ -11,7 +12,7 @@ function App() {
       <Routes>
         <Route path = "/" element={<Overview />} />
         <Route path = "/transaction-history" element={<History />} />
-
+        <Route path = "/transfer-funds" element={<Transfer />} />
       </Routes>
     </div>
   );
