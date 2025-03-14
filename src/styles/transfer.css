@@ -10,7 +10,7 @@
     padding-right: 2em;
     display: flex;
     flex-direction: column;
-    gap: 4em;
+    gap: 3em;
     /* border: 2px solid red;   */
     height: 100%;
 }
@@ -50,6 +50,7 @@
     display: flex;
     flex-direction: column;
     gap: 1em;
+    margin-top: -4em;
 }
 
 .bank-details-subheader{
@@ -65,8 +66,9 @@ form{
     flex-direction: column;
     justify-content: space-between;
     /* border: 1px solid; */
-    height: 20em;
+    height: 15em;
     width: 45%;
+    margin-bottom: 25em;
 
 }
 
@@ -108,5 +110,32 @@ form button{
     width: 100%;
     height: 1px;
     background-color: #b0b6af;
-    margin-top: 2em;
+    margin-bottom: 2em;
 }
+
+.bank-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    background-color: var(--main_color);
+    height: 8em;
+    padding: 2em;
+    
+}
+
+.bank-card h3{
+    color: white;
+}
+
+.bank-card-name p{
+    color:white;
+    
+}
+
+.bank-card-name{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+   

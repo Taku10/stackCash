@@ -135,43 +135,61 @@ const Overview = () => {
                 </div>
                 <div className="transaction-section">
                     <div className="transaction-header header">
-                        <h4>Transactions</h4>
+                        <h4>Recent Transactions</h4>
                         <button>View all</button>
                     </div>
                     <div className="transaction-wrapper">
-                        <div className="record">
-                            <div className="record-left">
-                                <img src={roger} alt="" />
-                                <p>Roger <span></span> </p>
-                            </div>
-                            <p className="record-amount-received">+$43.30</p>
-                            <p className="record-date">02/08/2025</p>
-                        </div>
-                        <div className="record">
-                            <div className="record-left">
-                                <img src={walmart} alt="" />
-                                <p>Walmart</p>
-                            </div>
-                            <p className="record-amount-spent">-$53.87</p>
-                            <p className="record-date">02/04/2025</p>
-                        </div>
-                        <div className="record">
-                            <div className="record-left">
-                                <img src={netflix} alt="" />
-                                <p>Netflix</p>
-                            </div>
-                            <p className="record-amount-spent">-$13.99</p>
-                            <p className="record-date">02/02/2025</p>
-                        </div>
-                        <div className="record">
-                            <div className="record-left">
-                                <img src={chess} alt="" />
-                                <p>Chess.com</p>
-                            </div>
-                            <p className="record-amount-received">+$150.30</p>
-                            <p className="record-date">01/25/2025</p>
-                        </div>
-
+                        <table className="transaction-table">
+                            <thead>
+                                <tr>
+                                    <th>Recipient</th>
+                                    <th>Amount</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div className="record-left">
+                                            <img src={roger} alt="" />
+                                            <p>Roger</p>
+                                        </div>
+                                    </td>
+                                    <td className="record-amount-received">+$43.30</td>
+                                    <td className="record-date">02/08/2025</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div className="record-left">
+                                            <img src={walmart} alt="" />
+                                            <p>Walmart</p>
+                                        </div>
+                                    </td>
+                                    <td className="record-amount-spent">-$53.87</td>
+                                    <td className="record-date">02/04/2025</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div className="record-left">
+                                            <img src={netflix} alt="" />
+                                            <p>Netflix</p>
+                                        </div>
+                                    </td>
+                                    <td className="record-amount-spent">-$13.99</td>
+                                    <td className="record-date">02/02/2025</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div className="record-left">
+                                            <img src={chess} alt="" />
+                                            <p>Chess.com</p>
+                                        </div>
+                                    </td>
+                                    <td className="record-amount-received">+$150.30</td>
+                                    <td className="record-date">01/25/2025</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

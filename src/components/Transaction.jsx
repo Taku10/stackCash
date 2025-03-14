@@ -9,7 +9,7 @@ const Transaction = ({transaction}) => {
     return (
        
            
-                <div className="record">
+                <div className="transaction-record">
                     <div className="record-left">
                         <img src={transaction.image} alt={transaction.name} />
                         <p>{transaction.name} </p>

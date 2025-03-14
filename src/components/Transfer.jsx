@@ -29,18 +29,26 @@ const Transfer = () => {
                             <option >Select Account</option>
                             <option value="transfer-chase">Chase</option>
                             <option value="transfer-wellsFargo">Wells Fargo</option>
-                            <option value="transfer-usBank">Us Bank</option>
+                            <option value="transfer-usBank">US Bank</option>
                         </select>
                     </div>
 
                 </div>
+                <div className='bank-card'>
+                    <div className="bank-card-name">
+                        <h3>Chase</h3>
+                        <p>Checking Account</p>
+                        <p>**** **** **** 1234</p>
+                    </div>
+                </div>
+                <hr className='line'/>
                 <div className="bank-details">
                     <div className="bank-details-subheader">
                         <h3>Bank Details</h3>
                         <p>Enter recipient's bank details</p>
                     </div>
                     
-                    <hr className='line'/>
+                    
                 </div>
                 
                 <form action="">
