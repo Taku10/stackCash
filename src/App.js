@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Budgets from './components/budgets';
 import History from './components/history';
 import Nav from './components/nav';
 import Overview from './components/overview';
@@ -13,6 +14,7 @@ function App() {
         <Route path = "/" element={<Overview />} />
         <Route path = "/transaction-history" element={<History />} />
         <Route path = "/transfer-funds" element={<Transfer />} />
+        <Route path = "/budgets" element={<Budgets />} />
       </Routes>
     </div>
   );

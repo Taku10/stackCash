@@ -75,7 +75,7 @@ const Overview = () => {
     />
     return (
 
-        <div className='home-wrapper'>
+        <div className='overview-wrapper'>
             <div className='left-middle-wrapper'>
                 <div className='welcome-section'>
                     <h1>
@@ -93,7 +93,7 @@ const Overview = () => {
                             labels: ["Chase", "Wells Fargo", "US Bank"],
                             datasets: [
                                 {
-                                    label: "Banks",
+                                    label: "Banks", 
                                     data: [344, 500, 200],
                                     backgroundColor: ["#58d68d", "#82e0aa", "#28b463"],
                                     offset: 10,

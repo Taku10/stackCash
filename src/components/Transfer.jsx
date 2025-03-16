@@ -1,5 +1,7 @@
+import CountUp from 'react-countup';
 import toast, { Toaster } from 'react-hot-toast';
 import '../styles/transfer.css';
+
 
 const Transfer = () => {
 
@@ -39,6 +41,13 @@ const Transfer = () => {
                         <h3>Chase</h3>
                         <p>Checking Account</p>
                         <p>**** **** **** 1234</p>
+                    </div>
+                    <div className='bank-card-balance'>
+                        <p>Current Balance</p>
+                        <h3>
+                                $<CountUp end={421.98} decimals={2} duration={1} />
+                            </h3>
+
                     </div>
                 </div>
                 <hr className='line'/>

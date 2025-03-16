@@ -1,9 +1,8 @@
-.transfer-container {
-  /* border: 2px solid blue;; */
-}
+
 
 .transfer-container p, label{
     color: rgb(102, 102, 102);
+    
 }
 .transfer-wrapper{
     padding-top: 2em;
@@ -22,10 +21,8 @@
   
 }
 
-.transfer-header h1{
-  
 
-}
+
 .transfer-select-account{
     border: 1px solid;
     width: 9em;
@@ -71,7 +68,6 @@ form{
     margin-bottom: 25em;
 
 }
-
 form div{
     /* border:1px solid; */
     display: flex;
@@ -121,6 +117,8 @@ form button{
     background-color: var(--main_color);
     height: 8em;
     padding: 2em;
+    border-radius: 0.5em;
+
     
 }
 
@@ -128,14 +126,35 @@ form button{
     color: white;
 }
 
-.bank-card-name p{
+.bank-card-name p, .bank-card-balance p{
     color:white;
-    
+    font-weight: 500;
+  
+}
+
+.bank-card-name h3{
+    font-size: 1.5em;
 }
 
 .bank-card-name{
     display: flex;
     flex-direction: column;
     gap: 1em;
+}
+
+.bank-card-balance{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    width: 12em;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    background-color: rgba(207, 203, 203, 0.3);
+    box-shadow: 1px 1px 5px 2px #b9b6b6;
+
+}
+
+.bank-card-balance h3{
+    font-size:2em ;
 }
    
