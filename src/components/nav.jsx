@@ -1,5 +1,6 @@
 import { BsStack } from "react-icons/bs";
 import { NavLink } from 'react-router-dom';
+import { doSignOut } from "../firebase/auth";
 import '../styles/nav.css';
 
 const Nav = () => {
@@ -15,6 +16,11 @@ const Nav = () => {
                 <NavLink to="/transfer-funds" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>Transfer Funds</NavLink>
                 <NavLink to="/budgets" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>Budgets</NavLink>
                 <NavLink to="/connect-bank" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>Connect Bank</NavLink>
+            </div>
+            <div>
+                <div className="sign-out">
+                    <button onClick={doSignOut}>Sign Out</button>
+                </div>
             </div>
         </nav>
     );
