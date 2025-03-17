@@ -1,0 +1,87 @@
+
+.home-container{
+    width: 100%;
+    /* border: 1px solid red; */
+}
+.main-nav{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid; */
+    width: 100%;
+    padding-left: 4em;
+    padding-right: 4em;
+    align-items: center;
+   
+    
+}
+
+
+.home-logo-wrapper{
+    
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.home-logo-wrapper h1{
+    
+    font-size: 1.5em;
+}
+
+.home-logo{
+    margin-top: 0.5em;
+    color: var(--main_color);
+    font-size: 2.9em;
+    
+}
+
+.auth-links{
+    display: flex;
+    align-items: center;
+    width: 20%; 
+    height: 3em;
+    /* border: 1px solid; */
+    justify-content: space-around;
+    
+}
+
+.auth-link{
+    text-decoration: none;
+    color: black;
+    border: 1px solid;
+    width: 40%;
+    text-align: center;
+    padding: 0.5em;
+    font-weight: 600;
+}
+
+.signUp-link{
+    background-color: var(--main_color);
+    color: white;
+    border: none;
+    border-radius: 0.5em;
+}
+
+.signUp-link:hover{
+   
+    border: 3px solid var(--main_color);
+    color: var(--main_color);
+    border-radius: 0.5em;
+    background-color: white;
+}
+
+.login-link{
+   
+    border: 3px solid var(--main_color);
+    color: var(--main_color);
+    border-radius: 0.5em;
+}
+
+.login-link:hover{
+    background-color: var(--main_color);
+    color: white;
+    border: none;
+    border-radius: 0.5em;
+}

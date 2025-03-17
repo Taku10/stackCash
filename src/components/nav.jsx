@@ -10,7 +10,7 @@ const Nav = () => {
                 <h1>Stack Cash</h1>
             </div>
             <div className="nav-links">
-                <NavLink exact to="/" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>Overview</NavLink>
+                <NavLink exact to="/overview" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>Overview</NavLink>
                 <NavLink to="/transaction-history" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>Transaction History</NavLink>
                 <NavLink to="/transfer-funds" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>Transfer Funds</NavLink>
                 <NavLink to="/budgets" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>Budgets</NavLink>
