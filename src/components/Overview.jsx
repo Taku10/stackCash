@@ -1,9 +1,9 @@
 import { ArcElement, Chart, defaults } from 'chart.js/auto';
+import { useEffect } from 'react';
 import { Doughnut } from "react-chartjs-2";
 import CountUp from 'react-countup';
 import { GoPlus } from "react-icons/go";
 import TypeWriter from 'typewriter-effect';
-import { useAuth } from '../context/authContext/';
 import budgetData from "../data/budget.json";
 import chess from '../images/chess.png';
 import netflix from '../images/netflix.png';
@@ -17,7 +17,7 @@ defaults.maintainAspectRatio = false;
 defaults.responsive = true;
 
 const Overview = () => {
-    const { currentUser } = useAuth();
+    // const { currentUser } = useAuth();
     function upload(event) {
         const fileUploadInput = event.target;
 
@@ -78,6 +78,10 @@ const Overview = () => {
         }}
         className="pie-chart"
     />
+
+     useEffect(() => {
+            document.title = "Stack Cash | Overview";
+        }, []);
     return (
 
         <div className='overview-wrapper'>

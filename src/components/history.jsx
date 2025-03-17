@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import transactionData from '../data/transactions.json';
 import '../styles/history.css';
 import Transaction from './Transaction';
@@ -20,6 +20,9 @@ const History = () => {
         setCurrentPage(pageNumber);
     };
 
+     useEffect(() => {
+            document.title = "Stack Cash | Transactions";
+        }, []);
     return (
 
         <div className="history-container">

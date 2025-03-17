@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import CountUp from 'react-countup';
 import toast, { Toaster } from 'react-hot-toast';
 import '../styles/transfer.css';
@@ -21,6 +22,10 @@ const Transfer = () => {
             error: 'Failed to send money.',
         });
     };
+
+     useEffect(() => {
+            document.title = "Stack Cash | Transfer";
+        }, []);
     return (
         <div className="transfer-container">
             <div className="transfer-wrapper">

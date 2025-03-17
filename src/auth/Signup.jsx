@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import MainNav from "../components/mainNav";
 import { doCreateUserWithEmailAndPassword } from "../firebase/auth";
@@ -13,6 +13,10 @@ const Signup = () => {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [isRegistering, setIsRegistering] = useState(false);
     // const [error, setError] = useState("");
+
+     useEffect(() => {
+            document.title = "Stack Cash | Sign Up";
+        }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();

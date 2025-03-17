@@ -1,9 +1,17 @@
 import { BsStack } from "react-icons/bs";
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { doSignOut } from "../firebase/auth";
 import '../styles/nav.css';
 
 const Nav = () => {
+
+    const navigate = useNavigate();
+    const signOut = () => {
+        doSignOut();
+        navigate("/login");
+
+    }
+
     return (
         <nav className="nav">
             <div className='logo-wrapper'>
@@ -19,7 +27,7 @@ const Nav = () => {
             </div>
             <div>
                 <div className="sign-out">
-                    <button onClick={doSignOut}>Sign Out</button>
+                    <button onClick={signOut}>Sign Out</button>
                 </div>
             </div>
         </nav>
