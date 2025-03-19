@@ -1,18 +1,22 @@
-import { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import MainNav from "../components/mainNav";
+import { useSignAuth } from "../context/authContext";
 import { doCreateUserWithEmailAndPassword } from "../firebase/auth";
 import "../styles/auth.css";
 
+
+
+const AuthContext = React.createContext();
+
+export function useAuth() {
+    return useContext(AuthContext);
+}
+
 const Signup = () => {
     const navigate = useNavigate();
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
-    const [isRegistering, setIsRegistering] = useState(false);
-    // const [error, setError] = useState("");
+    const {firstName, setFirstName, lastName, setLastName ,email, setEmail,  password, setPassword, confirmPassword, setConfirmPassword, isRegistering, setIsRegistering } = useSignAuth();
+
 
      useEffect(() => {
             document.title = "Stack Cash | Sign Up";
@@ -22,7 +26,7 @@ const Signup = () => {
         e.preventDefault();
         if(!isRegistering){
             setIsRegistering(true)
-            await doCreateUserWithEmailAndPassword(email, password);
+            await doCreateUserWithEmailAndPassword(firstName, email, password);
             navigate("/overview");
         }
     };

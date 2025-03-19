@@ -1,35 +1,36 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { auth } from "./firebase";
+import { auth, db } from "./firebase";
 
 
-export const doCreateUserWithEmailAndPassword = async (firstName, lastName,email, password) => {
-    try{
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
-    
-        await updateProfile(user, {
-            displayName: `${firstName} ${lastName}`
-          });
 
-          await setDoc(doc(db, "users", user.uid), {
-            firstName,
-            lastName,
-            email,
-            uid: user.uid
-          });
-    } catch (error) {
-        console.error("Error signing up:", error.message);
-      }
-    };
-    
+export const doCreateUserWithEmailAndPassword = async (firstName, email, password) => {
+  // const { firstName } = useSignAuth();
+  try {
+    await createUserWithEmailAndPassword(auth, email, password);
+    const user = auth.currentUser;
+    console.log(user);
+    if(user){
+      await setDoc(doc(db, "Users", user.uid), {
+        email: user.email,
+        firstName:firstName
+      });
+    }
+    console.log(firstName)
+    console.log("User Created");
+ 
+  } catch (error) { 
+    console.log("ERROR: " + error.message);
+  }
 
+
+}
 
 
 export const doSignInWithEmailAndPassword = async (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
+  return signInWithEmailAndPassword(auth, email, password);
 }
 
 export const doSignOut = async () => {
-    return auth.signOut();
+  return auth.signOut();
 }

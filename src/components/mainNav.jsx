@@ -18,6 +18,7 @@ const MainNav = () => {
                     <NavLink to="/login" className="auth-link login-link">Login</NavLink>
                     <NavLink to="/signUp" className="auth-link signUp-link">Sign Up</NavLink>
                 </div>}
+                
         </nav>
     )
 };

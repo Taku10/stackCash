@@ -4,6 +4,7 @@ import { Doughnut } from "react-chartjs-2";
 import CountUp from 'react-countup';
 import { GoPlus } from "react-icons/go";
 import TypeWriter from 'typewriter-effect';
+import { useSignAuth } from '../context/authContext';
 import budgetData from "../data/budget.json";
 import chess from '../images/chess.png';
 import netflix from '../images/netflix.png';
@@ -18,6 +19,8 @@ defaults.responsive = true;
 
 const Overview = () => {
     // const { currentUser } = useAuth();
+        const {firstName, lastName, email } = useSignAuth();
+    
     function upload(event) {
         const fileUploadInput = event.target;
 
@@ -46,7 +49,7 @@ const Overview = () => {
     const typewriter = <TypeWriter
         onInit={(typeWriter) => {
             typeWriter
-            .typeString("Takunda")
+            .typeString(`${firstName}`)
                 .pauseFor(20000000000000000000000000000000000000000n)
                 .start();
         }}
@@ -216,8 +219,8 @@ const Overview = () => {
                         />
                     </div>
                     <div className="profile-bio move-left">
-                        <h2>Takunda Madziwa</h2>
-                        <p></p>
+                        <h2>{`${firstName} ${lastName}`}</h2>
+                        <p>{`${email}`}</p>
                     </div>
                 </div>
                 <div className="budget-section">

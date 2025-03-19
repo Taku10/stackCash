@@ -69,3 +69,17 @@
     color: var(--white-grey);
 
 }
+
+.sign-out{
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5em;
+    width: 100%;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: background-color 0.7s, color 4s;
+    margin-top: 30%;
+    color: rgb(177, 228, 180)
+}

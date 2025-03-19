@@ -1,4 +1,6 @@
 import { BsStack } from "react-icons/bs";
+import { FaSignOutAlt } from "react-icons/fa";
+
 import { NavLink, useNavigate } from 'react-router-dom';
 import { doSignOut } from "../firebase/auth";
 import '../styles/nav.css';
@@ -15,7 +17,7 @@ const Nav = () => {
     return (
         <nav className="nav">
             <div className='logo-wrapper'>
-                <BsStack className="logo"/>
+                <BsStack className="logo" />
                 <h1>Stack Cash</h1>
             </div>
             <div className="nav-links">
@@ -26,9 +28,9 @@ const Nav = () => {
                 <NavLink to="/connect-bank" className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}>Connect Bank</NavLink>
             </div>
             <div>
-                <div className="sign-out">
-                    <button onClick={signOut}>Sign Out</button>
-                </div>
+               
+                    <FaSignOutAlt className="sign-out" onClick={signOut} />
+
             </div>
         </nav>
     );
