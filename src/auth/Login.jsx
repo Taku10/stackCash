@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { BsStack } from "react-icons/bs";
 import { NavLink, useNavigate } from "react-router-dom";
 import { doSignInWithEmailAndPassword } from "../firebase/auth";
+import { AnimatePage } from "../framer-motion/AnimatePage";
 import "../styles/auth.css";
+
 
 const Login = () => {
     // const { userLoggedIn } = useAuth();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState(null);
+    // const [error, setError] = useState(null);
     const [isSigningIn, setIsSigningIn] = useState(false);
     const navigate = useNavigate();
 
@@ -24,7 +27,7 @@ const Login = () => {
                 await doSignInWithEmailAndPassword(email, password);
                 navigate("/overview");
             } catch (error) {
-                setError(error.message);
+                toast.error("Invalid email or password");
                 setIsSigningIn(false);
             }
         }
@@ -32,7 +35,7 @@ const Login = () => {
     }
 
     return (
-        
+        <AnimatePage>
         <div className="login-container">
            
             <div className="login-wrapper">
@@ -50,9 +53,12 @@ const Login = () => {
                             <label htmlFor="password">Password</label>
                             <input type="password" id="password" name="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                         </div>
-                        {error && <p className="error-message">{error}</p>}
+                     
                         <button type="submit">Login</button>
-                       
+                        <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
                        <p>Don't have an account? <NavLink to="/signUp" className="">Sign Up</NavLink></p>    
                        
                         
@@ -65,6 +71,7 @@ const Login = () => {
             </div>
 
         </div>
+        </AnimatePage>
     );
 };
 

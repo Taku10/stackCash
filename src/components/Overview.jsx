@@ -1,11 +1,12 @@
 import { ArcElement, Chart, defaults } from 'chart.js/auto';
-import { useEffect } from 'react';
+import { doc, getDoc } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
 import { Doughnut } from "react-chartjs-2";
 import CountUp from 'react-countup';
 import { GoPlus } from "react-icons/go";
 import TypeWriter from 'typewriter-effect';
-import { useSignAuth } from '../context/authContext';
 import budgetData from "../data/budget.json";
+import { auth, db } from '../firebase/firebase';
 import chess from '../images/chess.png';
 import netflix from '../images/netflix.png';
 import roger from '../images/roger.jpg';
@@ -19,8 +20,33 @@ defaults.responsive = true;
 
 const Overview = () => {
     // const { currentUser } = useAuth();
-        const {firstName, lastName, email } = useSignAuth();
-    
+    // const {firstName, lastName, email } = useSignAuth();
+
+    const [userDetails, setUserDetails] = useState(null);
+    const getUserData = async () => {
+        auth.onAuthStateChanged(async (user) => {
+            if (user) {
+                // console.log(user);
+                const docRef = doc(db, "Users", user.uid);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    setUserDetails(docSnap.data());
+                    console.log(docSnap.data());
+                } else {
+                    console.log("User is not logged in")
+                }
+            } else {
+                setUserDetails(null);
+            }
+
+        })
+
+    }
+
+    useEffect(() => {
+        getUserData();
+    }, []);
+
     function upload(event) {
         const fileUploadInput = event.target;
 
@@ -49,16 +75,17 @@ const Overview = () => {
     const typewriter = <TypeWriter
         onInit={(typeWriter) => {
             typeWriter
-            .typeString(`${firstName}`)
-                .pauseFor(20000000000000000000000000000000000000000n)
+                .typeString(`${userDetails.firstName}`)
+                .pauseFor(2000000000000000)
                 .start();
         }}
-        options={{ loop: true,
-                cursor: '',
+        options={{
+            loop: true,
+            cursor: '',
         }}
     />
 
-    
+
 
 
     const doughnut = <Doughnut
@@ -82,9 +109,11 @@ const Overview = () => {
         className="pie-chart"
     />
 
-     useEffect(() => {
-            document.title = "Stack Cash | Overview";
-        }, []);
+    useEffect(() => {
+        document.title = "Stack Cash | Overview";
+    }, []);
+
+    const nameLoading = <p>...</p>
     return (
 
         <div className='overview-wrapper'>
@@ -92,7 +121,7 @@ const Overview = () => {
                 <div className='welcome-section'>
                     <h1>
 
-                        Welcome <span className='name'> {typewriter}</span>
+                        Welcome <span className='name'> {userDetails ? typewriter : nameLoading}</span>
                     </h1>
                     <p>
                         Inspired by Stack Overflow, but stacking money
@@ -105,7 +134,7 @@ const Overview = () => {
                             labels: ["Chase", "Wells Fargo", "US Bank"],
                             datasets: [
                                 {
-                                    label: "Banks", 
+                                    label: "Banks",
                                     data: [344, 500, 200],
                                     backgroundColor: ["#58d68d", "#82e0aa", "#28b463"],
                                     offset: 10,
@@ -218,10 +247,17 @@ const Overview = () => {
                             accept="image/*"
                         />
                     </div>
+
                     <div className="profile-bio move-left">
-                        <h2>{`${firstName} ${lastName}`}</h2>
-                        <p>{`${email}`}</p>
+                        {userDetails ? (
+                            <><h2>{`${userDetails.firstName}`}</h2>
+                                <p>{`${userDetails.email}`}</p></>
+                        ) : (
+                            <p>Loading </p>
+
+                        )}
                     </div>
+
                 </div>
                 <div className="budget-section">
                     <div className="budget-header header">

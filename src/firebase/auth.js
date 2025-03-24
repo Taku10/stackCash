@@ -4,8 +4,8 @@ import { auth, db } from "./firebase";
 
 
 
-export const doCreateUserWithEmailAndPassword = async (firstName, email, password) => {
-  // const { firstName } = useSignAuth();
+export const doCreateUserWithEmailAndPassword = async ( email, password, firstName) => {
+  
   try {
     await createUserWithEmailAndPassword(auth, email, password);
     const user = auth.currentUser;
@@ -13,7 +13,8 @@ export const doCreateUserWithEmailAndPassword = async (firstName, email, passwor
     if(user){
       await setDoc(doc(db, "Users", user.uid), {
         email: user.email,
-        firstName:firstName
+        firstName:firstName,
+        
       });
     }
     console.log(firstName)
@@ -32,5 +33,5 @@ export const doSignInWithEmailAndPassword = async (email, password) => {
 }
 
 export const doSignOut = async () => {
-  return auth.signOut();
+  return await auth.signOut();
 }
