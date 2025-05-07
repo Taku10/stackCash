@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# stackCash
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based personal finance tracker for managing budgets, recording expenses, and visualizing spending patterns.
+
+---
+
+
+---
+
+## Features
+
+* **Expense Tracking**: Add, edit, and delete expense entries with categories and tags.
+* **Budget Management**: Set monthly budgets and track progress against spending limits.
+* **Interactive Charts**: Visualize spending by category over time using charts.
+* **Responsive Design**: Works on desktop and mobile browsers.
+* **Data Persistence**: Saves data locally (or integrates with backend API).
+
+---
+
+## Demo
+
+*A screenshot or link to a live demo goes here.*
+
+---
+
+## Requirements
+
+* Node.js v14+ and npm (or Yarn)
+* Web browser (Chrome, Firefox, Safari, Edge)
+
+---
+
+## Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone git@github.com:Taku10/stackCash.git
+   cd stackCash
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Run the development server**
+
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
+
+   The app will open in your browser at `http://localhost:3000`.
+
+---
 
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+* `npm start` / `yarn start` : Runs the app in development mode.
+* `npm test`  / `yarn test`  : Launches the test runner in watch mode.
+* `npm run build` / `yarn build` : Builds the app for production.
+* `npm run eject` (not recommended) : Ejects from Create React App configuration.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+```
+stackCash/
+├── public/               # Static files and HTML template
+├── src/                  # React source code
+│   ├── components/       # Reusable UI components
+│   ├── pages/            # Page-level views
+│   ├── assets/           # Images, styles, fonts
+│   ├── hooks/            # Custom React hooks
+│   ├── utils/            # Utility functions
+│   ├── App.js            # Main application component
+│   └── index.js          # Entry point
+├── package.json          # Project metadata and scripts
+└── README.md             # Project documentation (this file)
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Contributing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Fork this repository.
+2. Create a branch: `git checkout -b feature/YourFeature`.
+3. Make your changes and commit: `git commit -m "Add feature"`.
+4. Push to the branch: `git push origin feature/YourFeature`.
+5. Open a Pull Request.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Please follow existing code style and include tests where applicable.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## License
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Contact
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+For feedback or questions, open an issue or contact:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Takunda Madziwa**
+tvmadziwwa5@gmail.com
