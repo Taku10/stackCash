@@ -32,7 +32,7 @@ A React-based personal finance tracker for managing budgets, recording expenses,
 
 ## Installation
 
-1. **Clone the repository**
+1. Clone the repository
 
    ```bash
    git clone git@github.com:Taku10/stackCash.git
@@ -41,19 +41,19 @@ A React-based personal finance tracker for managing budgets, recording expenses,
 
 2. **Install dependencies**
 
-   ```bash
+   bash
    npm install
    # or
    yarn install
-   ```
+   
 
-3. **Run the development server**
+3. Run the development server
 
-   ```bash
+   
    npm start
    # or
    yarn start
-   ```
+   
 
    The app will open in your browser at `http://localhost:3000`.
 
@@ -72,7 +72,7 @@ In the project directory, you can run:
 
 ## Project Structure
 
-```
+
 stackCash/
 ├── public/               # Static files and HTML template
 ├── src/                  # React source code
@@ -85,7 +85,7 @@ stackCash/
 │   └── index.js          # Entry point
 ├── package.json          # Project metadata and scripts
 └── README.md             # Project documentation (this file)
-```
+
 
 ---
 
