@@ -34,10 +34,10 @@ A React-based personal finance tracker for managing budgets, recording expenses,
 
 1. Clone the repository
 
-   ```bash
+ 
    git clone git@github.com:Taku10/stackCash.git
    cd stackCash
-   ```
+   
 
 2. **Install dependencies**
 
